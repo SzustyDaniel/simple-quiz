@@ -1,6 +1,6 @@
 export enum Category {
-  Mixed,
-  Geography,
-  History,
-  Music,
+  Mixed = "Mixed",
+  Geography = "Geography",
+  History = "History",
+  Music = "Music",
 }
