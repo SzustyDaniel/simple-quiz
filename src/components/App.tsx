@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.scss";
 import GamePage from "./game/GamePage";
 import Header from "./common/Header";

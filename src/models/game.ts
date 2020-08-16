@@ -13,12 +13,17 @@ export class Game {
     private _totalScore: number = 0,
     private _wrongAnswersCount: number = 0,
     private _totalCorrectAnswers: number = 0,
-    private _wrongAnswersAllowed: number = 3,
+    private _wrongAnswersAllowed: number = 2,
+    private _isGameOver: boolean,
     private _questions: Question[]
   ) {}
 
   public get id(): number {
     return this._id;
+  }
+
+  public get isGameOver(): boolean {
+    return this._isGameOver;
   }
 
   public get category(): Category {
@@ -57,8 +62,15 @@ export class Game {
     return this._questions;
   }
 
-  public isWrongAnswersExceedsAllowed(): boolean {
+  private isWrongAnswersExceedsAllowed(): boolean {
     return this.wrongAnswersCount > this.wrongAnswersAllowed;
+  }
+
+  private areAllQuestionsAnswered(): boolean {
+    return (
+      this.totalCorrectAnswers + this.wrongAnswersCount ===
+      this.questions.length
+    );
   }
 
   // base formula for calculating the score of a game is (total correct answers * difficulty multiplier * base answer score)
@@ -79,6 +91,11 @@ export class Game {
 
     this._totalScore =
       this.totalCorrectAnswers * answersMultiplier * this.BASE_ANSWER_SCORE;
+  }
+
+  public checkGameState() {
+    this._isGameOver =
+      this.isWrongAnswersExceedsAllowed() || this.areAllQuestionsAnswered();
   }
 
   public toLogString(): string {

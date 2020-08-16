@@ -1,0 +1,17 @@
+// text input combination controls for type div -> label input
+.input {
+  &-container {
+    display: grid;
+    grid-template-columns: 20rem minmax(20rem, 50rem);
+    gap: 5rem;
+  }
+
+  &-label {
+    font-weight: 700;
+  }
+
+  &-control {
+    font-size: inherit;
+    background-color: #ccc;
+  }
+}

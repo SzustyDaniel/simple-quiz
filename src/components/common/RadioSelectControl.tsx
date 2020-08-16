@@ -1,4 +1,5 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
+import "../../styles/_buttons.scss";
 
 type SelectProps = {
   label: string;
@@ -14,12 +15,12 @@ const RadioSelectControl = ({
   onOptionChange,
 }: SelectProps) => {
   return (
-    <div className='select__container'>
-      <label className='select__label'>{label}</label>
-      <div className='select__radio'>
+    <div className='radio__container-main'>
+      <label className='radio__label-main'>{label}</label>
+      <div className='radio__controls'>
         {options.map((option) => {
           return (
-            <label key={option}>
+            <label key={option} className='radio__container'>
               <input
                 type='radio'
                 checked={selectedOption === option}

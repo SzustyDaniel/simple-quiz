@@ -1,0 +1,77 @@
+.radio {
+  // for what holds the label and the radio controls
+  &__container-main {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
+  }
+
+  // set default radio control to opacity 0
+  &__container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  // custom radio input look on hover
+  &__container:hover input ~ .app-radio {
+    background-color: #ccc; // TODO change to variable
+  }
+
+  // custom radio input look on checked
+  &__container input:checked ~ .app-radio {
+    background-color: #2196f3; // TODO change to variable
+  }
+
+  &__container input:checked ~ .app-radio:after {
+    display: block;
+  }
+
+  // custom radio inner circle dot
+  &__container .app-radio:after {
+    top: 0.7rem;
+    left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: white; // TODO change to variable
+  }
+
+  // radio buttons controls
+  &__controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    align-content: center;
+    gap: 5rem;
+  }
+
+  // Radio controls identifier label
+  &__label-main {
+    font-weight: 700;
+  }
+}
+
+// the span class for the custom radio button look
+.app-radio {
+  height: 2rem;
+  width: 2rem;
+  background-color: #eee; // TODO change to variable
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  transition: all 0.4s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
