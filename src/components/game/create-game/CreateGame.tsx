@@ -4,12 +4,13 @@ import { Category, Difficulty } from "../../../models/enums";
 import TextInput from "../../common/TextInput";
 import "./CreateGame.scss";
 
-function CreateGame(props: any) {
+function CreateGame() {
   const TOTAL_NAME_SIZE = 30;
 
   const [selectedCategory, setSelectedCategory] = useState(Category.Mixed);
   const [selectedDifficulty, setSelectedDifficulty] = useState(Difficulty.Easy);
   const [playerName, setPlayerName] = useState("");
+  const [errors, setErrors] = useState<string[]>([]);
 
   function handleCategoryChange(event: any) {
     setSelectedCategory(event.target.value);
@@ -28,8 +29,10 @@ function CreateGame(props: any) {
     event.preventDefault();
 
     if (isFormValid()) {
+      setErrors([]);
+      // TODO create game store action
     } else {
-      console.log("missing player name");
+      setErrors(["Missing player name"]);
     }
   }
 
@@ -38,22 +41,23 @@ function CreateGame(props: any) {
   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form className='create-game-form' onSubmit={handleFormSubmit}>
       <h3>Create New Game</h3>
       <TextInput
         label='Enter your name'
         value={playerName}
         onChange={handleNameChange}
         maxLength={TOTAL_NAME_SIZE}
+        errors={errors}
       />
       <RadioSelectControl
-        label='Category Select'
+        label='Select category'
         options={Object.keys(Category)}
         selectedOption={selectedCategory}
         onOptionChange={handleCategoryChange}
       />
       <RadioSelectControl
-        label='Difficulty'
+        label='Select difficulty'
         options={Object.keys(Difficulty)}
         selectedOption={selectedDifficulty}
         onOptionChange={handleDifficultyChange}

@@ -3,7 +3,14 @@
   &-container {
     display: grid;
     grid-template-columns: 20rem minmax(20rem, 50rem);
-    gap: 5rem;
+    column-gap: 5rem;
+
+    .error-text {
+      grid-column: 2 / -1;
+      color: red;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
   }
 
   &-label {
@@ -12,6 +19,11 @@
 
   &-control {
     font-size: inherit;
-    background-color: #ccc;
+    background-color: #ccc; // TODO change to variable
+    border-radius: 0.5rem;
+  }
+
+  &-error {
+    border: solid 0.2rem red !important; // TODO change to variable
   }
 }

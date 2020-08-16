@@ -1,5 +1,12 @@
 @import "../../../styles/variables";
 
+.create-game-form {
+  display: grid;
+  padding: 1rem 5rem;
+  grid-template-rows: repeat(auto-fit, max-content);
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
 .submit-button {
   font-size: inherit;
   font-weight: 300;
@@ -8,6 +15,7 @@
   background-color: #ccc; // TODO change to variable
   outline: none;
   transition: all 0.4s;
+  width: 25%;
 
   &:hover {
     background-color: red;
