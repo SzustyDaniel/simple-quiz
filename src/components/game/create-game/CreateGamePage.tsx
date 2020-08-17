@@ -4,7 +4,7 @@ import { Category, Difficulty } from "../../../models/enums";
 import TextInput from "../../common/TextInput";
 import "./CreateGame.scss";
 
-function CreateGame() {
+function CreateGamePage() {
   const TOTAL_NAME_SIZE = 30;
 
   const [selectedCategory, setSelectedCategory] = useState(Category.Mixed);
@@ -69,4 +69,4 @@ function CreateGame() {
   );
 }
 
-export default CreateGame;
+export default CreateGamePage;
