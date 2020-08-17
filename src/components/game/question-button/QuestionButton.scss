@@ -1,0 +1,19 @@
+.question-button {
+  font-size: 3.5rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+  background-color: #22ee11; // TODO change to variable
+
+  &:hover {
+    background-color: lighten(#22ee11, 20%); // TODO change to variable
+  }
+
+  &:active {
+    transform: translateY(3px);
+  }
+}

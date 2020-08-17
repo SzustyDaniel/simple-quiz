@@ -7,7 +7,11 @@ type QuestionButtonProps = {
 };
 
 const QuestionButton = ({ answer, onClick }: QuestionButtonProps) => {
-  return <button onClick={onClick}>{answer}</button>;
+  return (
+    <button className='question-button' onClick={onClick}>
+      {answer}
+    </button>
+  );
 };
 
 export default QuestionButton;

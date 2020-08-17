@@ -5,11 +5,7 @@ type QuestionProps = {
 };
 
 const QuestionComponent = ({ question }: QuestionProps) => {
-  return (
-    <section>
-      <p>{question}</p>
-    </section>
-  );
+  return <p className='question-text'>{question}</p>;
 };
 
 export default QuestionComponent;
