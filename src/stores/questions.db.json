@@ -1,0 +1,250 @@
+[
+  {
+    "category": "Geography",
+    "questions": [
+      {
+        "question": "What is the name of the former country that was succeeded by countries such as Serbia, Croatia and Slovenia?",
+        "correct_answer": "Yugoslavia",
+        "incorrect_answers": ["Czechoslovakia", "Abkhazia", "South Ossetia"]
+      },
+      {
+        "question": "If soccer is called football in England, what is American football called in England?",
+        "correct_answer": "American football",
+        "incorrect_answers": ["Combball", "Handball", "Touchdown"]
+      },
+      {
+        "question": "What is the capital of the State of Washington, United States?",
+        "correct_answer": "Olympia",
+        "incorrect_answers": ["Washington D.C.", "Seattle", "Yukon"]
+      },
+      {
+        "question": "What is the nickname for the US state Delaware?",
+        "correct_answer": "The First State",
+        "incorrect_answers": [
+          "The Fiftieth State",
+          "The Second State",
+          "The Sixteenth State"
+        ]
+      },
+      {
+        "question": "What is the busiest port in Europe?",
+        "correct_answer": "Port of Rotterdam",
+        "incorrect_answers": [
+          "Port of Antwerp",
+          "Port of Hamburg",
+          "Port of Amsterdam"
+        ]
+      },
+      {
+        "question": "What is the capital of Lithuania?",
+        "correct_answer": "Vilnius",
+        "incorrect_answers": ["Tallinn", "Helsinki", "Riga"]
+      },
+      {
+        "question": "Which of the following is NOT a capital city?",
+        "correct_answer": "Sydney",
+        "incorrect_answers": ["Cairo", "Moscow", "Beijing"]
+      },
+      {
+        "question": "In which English county is the city of Portsmouth?",
+        "correct_answer": "Hampshire",
+        "incorrect_answers": ["Oxfordshire", "Buckinghamshire", "Surrey"]
+      },
+      {
+        "question": "Frankenmuth, a US city nicknamed &quot;Little Bavaria&quot;, is located in what state?",
+        "correct_answer": "Michigan",
+        "incorrect_answers": ["Pennsylvania", "Kentucky", "Virginia"]
+      },
+      {
+        "question": "What is the capital of Greenland?",
+        "correct_answer": "Nuuk",
+        "incorrect_answers": ["Sisimiut", "Narsaq", "Maniitsoq"]
+      }
+    ]
+  },
+  {
+    "category": "History",
+    "questions": [
+      {
+        "question": "Who was the first explorer to sail to North America?",
+        "correct_answer": "Leif Erikson",
+        "incorrect_answers": [
+          "Christopher Columbus",
+          "Amerigo Vespucci",
+          "Ferdinand Magellan"
+        ]
+      },
+      {
+        "question": "The Herero genocide was perpetrated in Africa by which of the following colonial nations?",
+        "correct_answer": "Germany",
+        "incorrect_answers": ["Britain", "Belgium", "France"]
+      },
+      {
+        "question": "What age was King Henry V when he died?",
+        "correct_answer": "35",
+        "incorrect_answers": ["62", "87", "73"]
+      },
+      {
+        "question": "The United States Department of Homeland Security was formed in response to the September 11th attacks.",
+        "correct_answer": "True",
+        "incorrect_answers": ["False"]
+      },
+      {
+        "question": "The United States was a member of the League of Nations.",
+        "correct_answer": "False",
+        "incorrect_answers": ["True"]
+      },
+      {
+        "question": "Adolf Hitler was a german soldier in World War I.",
+        "correct_answer": "True",
+        "incorrect_answers": ["False"]
+      },
+      {
+        "question": "Which WWII tank ace is credited with having destroyed the most tanks?",
+        "correct_answer": "Kurt Knispel",
+        "incorrect_answers": ["Michael Wittmann", "Walter Kniep", "Otto Carius"]
+      },
+      {
+        "question": "What was the first sport to have been played on the moon?",
+        "correct_answer": "Golf",
+        "incorrect_answers": ["Football", "Tennis", "Soccer"]
+      },
+      {
+        "question": "In what dialogue did Socrates defend himself to the court of Athens? ",
+        "correct_answer": "The Apology",
+        "incorrect_answers": ["The Euthyphro", "The Laws", "The Republic"]
+      },
+      {
+        "question": "The main objective of the German operation &quot;Case Blue&quot; during World War II was originally to capture what?",
+        "correct_answer": "Caucasus",
+        "incorrect_answers": ["Stalingrad", "Crimea", "Voronezh"]
+      }
+    ]
+  },
+  {
+    "category": "Films",
+    "questions": [
+      {
+        "question": "The word &quot;Inception&quot; came from the 2010 blockbuster hit &quot;Inception&quot;.",
+        "correct_answer": "False",
+        "incorrect_answers": ["True"]
+      },
+      {
+        "question": "In the 1979 British film &quot;Quadrophenia&quot; what is the name of the main protagonist?",
+        "correct_answer": "Jimmy Cooper",
+        "incorrect_answers": ["Pete Townshend", "Franc Roddam", "Archie Bunker"]
+      },
+      {
+        "question": "In what year was the movie &quot;Police Academy&quot; released?",
+        "correct_answer": "1984",
+        "incorrect_answers": ["1986", "1985", "1983"]
+      },
+      {
+        "question": "Which animated film did Steven Lisberger direct in 1980 before going on to direct Tron?",
+        "correct_answer": "Animalympics",
+        "incorrect_answers": [
+          "The Fox and the Hound",
+          "The Black Cauldron",
+          "The Great Mouse Detecive"
+        ]
+      },
+      {
+        "question": "Joan Cusack starred in the 2009 disaster movie, &quot;2012&quot;.",
+        "correct_answer": "False",
+        "incorrect_answers": ["True"]
+      },
+      {
+        "question": "In the Friday The 13th series, what is Jason&#039;s mother&#039;s first name?",
+        "correct_answer": "Pamela",
+        "incorrect_answers": ["Mary", "Christine", "Angeline"]
+      },
+      {
+        "question": "Which 90&#039;s comedy cult classic features cameos appearances from Meat Loaf, Alice Cooper and Chris Farley?",
+        "correct_answer": "Wayne&#039;s World",
+        "incorrect_answers": [
+          "Bill &amp; Ted&#039;s Excellent Adventure",
+          "Dumb and Dumber",
+          "Austin Powers: International Man of Mystery"
+        ]
+      },
+      {
+        "question": "Which 1994 film did Roger Ebert famously despise, saying &quot;I hated hated hated hated hated this movie&quot;.",
+        "correct_answer": "North",
+        "incorrect_answers": [
+          "3 Ninjas Kick Back",
+          "The Santa Clause",
+          "Richie Rich"
+        ]
+      },
+      {
+        "question": "Which actor and martial artist starred as Colonel Guile in the 1994 action film adaptation of Street Fighter?",
+        "correct_answer": "Jean-Claude Van Damme",
+        "incorrect_answers": ["Chuck Norris", "Steven Seagal", "Scott Adkins"]
+      },
+      {
+        "question": "The original ending of &quot;Little Shop Of Horrors&quot; has the plants taking over the world.",
+        "correct_answer": "True",
+        "incorrect_answers": ["False"]
+      }
+    ]
+  },
+  {
+    "category": "Music",
+    "questions": [
+      {
+        "question": "Who had a US and UK number 1 hit in 1962 with the instrumental, &#039;Telstar&#039;?",
+        "correct_answer": "The Tornados",
+        "incorrect_answers": ["The Ventures", "The Spotnicks", "The Tremeloes"]
+      },
+      {
+        "question": "Rapper Snoop Dogg&#039;s real name is &#039;Cordozar Calvin Broadus, Jr.&#039;.",
+        "correct_answer": "True",
+        "incorrect_answers": ["False"]
+      },
+      {
+        "question": "The cover of The Beatles album &quot;Abbey Road&quot; featured a Volkswagen Beetle in the background.",
+        "correct_answer": "True",
+        "incorrect_answers": ["False"]
+      },
+      {
+        "question": "How many members are there in the band Nirvana?",
+        "correct_answer": "Three",
+        "incorrect_answers": ["Two", "Four", "Five"]
+      },
+      {
+        "question": "&quot;The Division Bell&quot; is the final album of the progressive rock band Pink Floyd.",
+        "correct_answer": "False",
+        "incorrect_answers": ["True"]
+      },
+      {
+        "question": "According to a song by Belinda Carlisle, Heaven is a place on what?",
+        "correct_answer": "Earth",
+        "incorrect_answers": ["Venus", "Mars", "Uranus"]
+      },
+      {
+        "question": "In what film was the Michael Jackson song &quot;Will You Be There&quot; featured?",
+        "correct_answer": "Free Willy",
+        "incorrect_answers": [
+          "Sleepless in Seattle",
+          "Men in Black",
+          "Bad Boys"
+        ]
+      },
+      {
+        "question": "Dave Grohl recorded the Foo Fighters&#039; debut, &quot;Foo Fighters,&quot; by himself.",
+        "correct_answer": "True",
+        "incorrect_answers": ["False"]
+      },
+      {
+        "question": "Metallica collaborated with Rowan Atkinson&#039;s Mr Bean on a 1992 comic relief single.",
+        "correct_answer": "False",
+        "incorrect_answers": ["True"]
+      },
+      {
+        "question": "What is the opening track on Lorde&#039;s Pure Heroine?",
+        "correct_answer": "Tennis Court",
+        "incorrect_answers": ["Team", "Royals", "400 Lux"]
+      }
+    ]
+  }
+]
