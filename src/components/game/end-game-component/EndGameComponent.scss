@@ -1,0 +1,15 @@
+.end-game-component {
+  color: red;
+  transition: all 0.4s;
+  margin-left: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    color: darken(red, 20%);
+  }
+
+  &:active {
+    color: lighten(red, 20%);
+    transform: scale(0.9);
+  }
+}

@@ -15,7 +15,9 @@ function GameBoardPage() {
           }
         />
       </section>
-      <EndGameComponent />
+      <section className='end-game-section'>
+        <EndGameComponent />
+      </section>
       <section className='wrong-count-section'>
         <WrongCount wrongAnswersCount={4} />
       </section>
