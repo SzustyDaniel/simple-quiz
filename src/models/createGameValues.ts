@@ -1,5 +1,5 @@
-import { Category, Difficulty } from "./enums";
-
+import { Difficulty } from "./enums";
+import { Category } from "./category";
 export interface CreateGameValues {
   playerName: string;
   gameCategory: Category;

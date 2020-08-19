@@ -4,10 +4,12 @@ import QuestionComponent from "../question-component/Question.component";
 import QuestionButton from "../question-button/QuestionButton";
 import WrongCount from "../wrong-count-component/WrongCount";
 import EndGameComponent from "../end-game-component/EndGameComponent";
-import { Game } from "../../../models";
+import { Game, Question, Category } from "../../../models";
 
 function GameBoardPage() {
   const [game, setGame] = useState<Game>();
+  const [currentQuestion, setCurrentQuestion] = useState<Question>();
+  const [questionIndex, setQuestionIndex] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
 
   function handleEndGame(event: any) {

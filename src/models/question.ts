@@ -1,4 +1,4 @@
-import { Category } from "./enums";
+import { Category } from "./category";
 
 export class Question {
   constructor(
@@ -6,7 +6,7 @@ export class Question {
     private _correctAnswer: string,
     private _possibleChoices: string[],
     private _isCorrect: boolean,
-    private _category: Category
+    private _category?: Category | undefined
   ) {}
 
   public get correctAnswer(): string {
@@ -33,8 +33,12 @@ export class Question {
     this._questionString = v;
   }
 
-  public get category(): Category {
+  public get category(): Category | undefined {
     return this._category;
+  }
+
+  public set category(v: Category | undefined) {
+    this._category = v;
   }
 
   public wasSelectedAnswerCorrect(answer: string): boolean {
@@ -46,6 +50,6 @@ export class Question {
     question: ${this.question}
     correct answer: ${this.correctAnswer}
     possible answers: ${this.choices.map((c) => `${c} `)}
-    question category: ${Category[this.category]}`;
+    question category: ${this.category?.name}`;
   }
 }

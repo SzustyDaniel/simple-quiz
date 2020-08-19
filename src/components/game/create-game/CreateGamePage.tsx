@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RadioSelectControl from "../../common/RadioSelectControl";
-import { Category, Difficulty } from "../../../models/enums";
+import { Difficulty } from "../../../models/enums";
+import { Category } from "../../../models";
 import TextInput from "../../common/TextInput";
 import "./CreateGame.scss";
+import * as questionService from "../../../services/questions.service";
+import SelectControl from "../../common/SelectControl";
+import questionsStore from "../../../stores/questions.store";
+import { getQuestionsCategories } from "../../../actions/questionsActions";
 
 function CreateGamePage() {
   const TOTAL_NAME_SIZE = 30;
-
-  const [selectedCategory, setSelectedCategory] = useState(Category.Mixed);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [categories, setCategories] = useState<Category[]>([]);
   const [selectedDifficulty, setSelectedDifficulty] = useState(Difficulty.Easy);
   const [playerName, setPlayerName] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
+
+  useEffect(() => {
+    questionsStore.addChangeListener(onQuestionsChange);
+    if (questionsStore.getCategories().length === 0) {
+      getQuestionsCategories();
+    }
+    return () => {
+      questionsStore.removeChangeListener(onQuestionsChange);
+    };
+  }, [categories]);
+
+  function onQuestionsChange() {
+    setCategories(questionsStore.getCategories());
+  }
 
   function handleCategoryChange(event: any) {
     setSelectedCategory(event.target.value);
@@ -28,6 +47,8 @@ function CreateGamePage() {
   function handleFormSubmit(event: React.FormEvent<HTMLElement>) {
     event.preventDefault();
 
+    questionService.getQuestions(5);
+    questionService.getQuestions(5, { id: 10, name: "" });
     if (isFormValid()) {
       setErrors([]);
       // TODO create game store action
@@ -50,11 +71,11 @@ function CreateGamePage() {
         maxLength={TOTAL_NAME_SIZE}
         errors={errors}
       />
-      <RadioSelectControl
-        label='Select category'
-        options={Object.keys(Category)}
+      <SelectControl
         selectedOption={selectedCategory}
-        onOptionChange={handleCategoryChange}
+        label='Select category'
+        options={categories.map((c) => c.name)}
+        onChange={handleCategoryChange}
       />
       <RadioSelectControl
         label='Select difficulty'

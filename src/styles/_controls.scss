@@ -27,3 +27,20 @@
     border: solid 0.2rem red !important; // TODO change to variable
   }
 }
+
+.select {
+  &-container {
+    display: grid;
+    grid-template-columns: 20rem max-content;
+    column-gap: 5rem;
+  }
+
+  &-label {
+    font-weight: 700;
+  }
+
+  &-control {
+    font-size: inherit;
+    cursor: pointer;
+  }
+}

@@ -1,6 +1,7 @@
 import { Question } from "./question";
 import { Player } from "./player";
-import { Category, Difficulty } from "./enums";
+import { Category } from "./category";
+import { Difficulty } from "./enums";
 
 export class Game {
   public readonly BASE_ANSWER_SCORE = 1000;
@@ -101,7 +102,7 @@ export class Game {
   public toLogString(): string {
     return `Game stats: 
     Id: ${this.id}
-    category: ${Category[this.category]}
+    category: ${this.category.name}
     difficulty: ${Difficulty[this.difficulty]}
     player: id- ${this.player.id} name - ${this.player.name}
     wrong answers count: ${this.wrongAnswersCount}
