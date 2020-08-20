@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import RadioSelectControl from "../../common/RadioSelectControl";
-import { Difficulty } from "../../../models/enums";
-import { Category } from "../../../models";
+import SelectControl from "../../common/SelectControl";
+import { Category, Difficulty, Player } from "../../../models";
 import TextInput from "../../common/TextInput";
 import "./CreateGame.scss";
-import * as questionService from "../../../services/questions.service";
-import SelectControl from "../../common/SelectControl";
-import questionsStore from "../../../stores/questions.store";
-import { getQuestionsCategories } from "../../../actions/questionsActions";
+import { getPlayers, createNewPlayer } from "../../../actions/playerActions";
+import questionsStore from "../../../stores/game.store";
+import playerStore from "../../../stores/player.store";
+import { getQuestionsCategories } from "../../../actions/gameActions";
 
 function CreateGamePage() {
   const TOTAL_NAME_SIZE = 30;
@@ -22,11 +22,18 @@ function CreateGamePage() {
     if (questionsStore.getCategories().length === 0) {
       getQuestionsCategories();
     }
+
+    // if no players were loaded load them for future operations
+    if (playerStore.getPlayers().length === 0) {
+      getPlayers();
+    }
+
     return () => {
       questionsStore.removeChangeListener(onQuestionsChange);
     };
   }, [categories]);
 
+  // on pub-sub update set the categories for the selection
   function onQuestionsChange() {
     setCategories(questionsStore.getCategories());
   }
@@ -47,11 +54,15 @@ function CreateGamePage() {
   function handleFormSubmit(event: React.FormEvent<HTMLElement>) {
     event.preventDefault();
 
-    questionService.getQuestions(5);
-    questionService.getQuestions(5, { id: 10, name: "" });
     if (isFormValid()) {
       setErrors([]);
-      // TODO create game store action
+
+      // check if player name exists
+      const playerId = playerStore
+        .getPlayers()
+        .reduce((a, b, i) => (a.id > b.id ? a : b)).id;
+      const player = new Player(playerId + 1, playerName, 0);
+      createNewPlayer(player);
     } else {
       setErrors(["Missing player name"]);
     }

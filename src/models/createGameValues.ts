@@ -1,7 +1,8 @@
 import { Difficulty } from "./enums";
 import { Category } from "./category";
+import { Player } from "./player";
 export interface CreateGameValues {
-  playerName: string;
+  player: Player;
   gameCategory: Category;
   gameDifficulty: Difficulty;
 }

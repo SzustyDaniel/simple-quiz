@@ -20,7 +20,7 @@ function createEasyGame(values: CreateGameValues): Promise<Game> {
       return new Game(
         0,
         values.gameCategory,
-        new Player(0, values.playerName, 0), // TODO change how a player is given.
+        values.player,
         values.gameDifficulty,
         0,
         0,
@@ -39,7 +39,7 @@ function createMediumGame(values: CreateGameValues): Promise<Game> {
       return new Game(
         0,
         values.gameCategory,
-        new Player(0, values.playerName, 0), // TODO change how a player is given.
+        values.player,
         values.gameDifficulty,
         0,
         0,
@@ -58,7 +58,7 @@ function createHardGame(values: CreateGameValues): Promise<Game> {
       return new Game(
         0,
         values.gameCategory,
-        new Player(0, values.playerName, 0), // TODO change how a player is given.
+        values.player,
         values.gameDifficulty,
         0,
         0,

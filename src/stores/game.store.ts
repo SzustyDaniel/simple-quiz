@@ -1,13 +1,45 @@
 import { EventEmitter } from "events";
 import dispatcher from "../appDispatcher";
 import actionTypes from "../actions/actionTypes";
-import { Game } from "../models";
+import { Category, Game } from "../models";
+import { Dispatcher } from "flux";
 
 const CHANGE_EVENT = "change";
-let game: Game;
+let _categories: Category[] = [];
+let _game: Game;
 
-class GameStore extends EventEmitter {}
+class GameStore extends EventEmitter {
+  addChangeListener(callback: any) {
+    this.on(CHANGE_EVENT, callback);
+  }
+
+  removeChangeListener(callback: any) {
+    this.removeListener(CHANGE_EVENT, callback);
+  }
+
+  emitChange() {
+    this.emit(CHANGE_EVENT);
+  }
+
+  getCategories(): Category[] {
+    return _categories;
+  }
+}
 
 const store = new GameStore();
+
+dispatcher.register((action: any) => {
+  switch (action.actionType) {
+    case actionTypes.LOAD_CATEGORIES:
+      _categories.push(...action.categories);
+      store.emitChange();
+      break;
+    case actionTypes.CREATE_GAME:
+      _game = action.game;
+      store.emitChange();
+      break;
+    default:
+  }
+});
 
 export default store;

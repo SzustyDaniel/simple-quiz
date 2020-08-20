@@ -1,0 +1,19 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Gonzo",
+      "score": 4000
+    },
+    {
+      "id": 2,
+      "name": "Kermit",
+      "score": 6000
+    },
+    {
+      "id": 3,
+      "name": "Miss piggy",
+      "score": 5000
+    }
+  ]
+}
