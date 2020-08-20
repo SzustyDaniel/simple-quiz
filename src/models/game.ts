@@ -8,7 +8,7 @@ export class Game {
 
   constructor(
     private _id: number,
-    private _category: Category,
+    private _category: Category | undefined,
     private _player: Player,
     private _difficulty: Difficulty,
     private _totalScore: number = 0,
@@ -27,7 +27,7 @@ export class Game {
     return this._isGameOver;
   }
 
-  public get category(): Category {
+  public get category(): Category | undefined {
     return this._category;
   }
 
@@ -45,6 +45,10 @@ export class Game {
 
   public get wrongAnswersCount(): number {
     return this._wrongAnswersCount;
+  }
+
+  public set wrongAnswersCount(v: number) {
+    this._wrongAnswersCount = v;
   }
 
   public get totalCorrectAnswers(): number {
@@ -102,7 +106,7 @@ export class Game {
   public toLogString(): string {
     return `Game stats: 
     Id: ${this.id}
-    category: ${this.category.name}
+    category: ${this.category?.name}
     difficulty: ${Difficulty[this.difficulty]}
     player: id- ${this.player.id} name - ${this.player.name}
     wrong answers count: ${this.wrongAnswersCount}

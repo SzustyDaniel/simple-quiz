@@ -3,6 +3,6 @@ import { Category } from "./category";
 import { Player } from "./player";
 export interface CreateGameValues {
   player: Player;
-  gameCategory: Category;
+  gameCategory: Category | undefined;
   gameDifficulty: Difficulty;
 }

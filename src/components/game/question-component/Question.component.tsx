@@ -1,7 +1,7 @@
 import React from "react";
 import "./Question.component.scss";
 type QuestionProps = {
-  question: string;
+  question: string | undefined;
 };
 
 const QuestionComponent = ({ question }: QuestionProps) => {

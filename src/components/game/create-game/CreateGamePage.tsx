@@ -5,11 +5,14 @@ import { Category, Difficulty, Player } from "../../../models";
 import TextInput from "../../common/TextInput";
 import "./CreateGame.scss";
 import { getPlayers, createNewPlayer } from "../../../actions/playerActions";
-import questionsStore from "../../../stores/game.store";
+import gameStore from "../../../stores/game.store";
 import playerStore from "../../../stores/player.store";
-import { getQuestionsCategories } from "../../../actions/gameActions";
+import {
+  getQuestionsCategories,
+  createNewGame,
+} from "../../../actions/gameActions";
 
-function CreateGamePage() {
+function CreateGamePage(props: any) {
   const TOTAL_NAME_SIZE = 30;
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [categories, setCategories] = useState<Category[]>([]);
@@ -18,9 +21,11 @@ function CreateGamePage() {
   const [errors, setErrors] = useState<string[]>([]);
 
   useEffect(() => {
-    questionsStore.addChangeListener(onQuestionsChange);
-    if (questionsStore.getCategories().length === 0) {
+    gameStore.addChangeListener(onQuestionsChange);
+    if (gameStore.getCategories().length === 0) {
       getQuestionsCategories();
+    } else {
+      setCategories(gameStore.getCategories());
     }
 
     // if no players were loaded load them for future operations
@@ -29,13 +34,14 @@ function CreateGamePage() {
     }
 
     return () => {
-      questionsStore.removeChangeListener(onQuestionsChange);
+      gameStore.removeChangeListener(onQuestionsChange);
     };
   }, [categories]);
 
   // on pub-sub update set the categories for the selection
   function onQuestionsChange() {
-    setCategories(questionsStore.getCategories());
+    setCategories(gameStore.getCategories());
+    setSelectedCategory(gameStore.getCategories()[0].name);
   }
 
   function handleCategoryChange(event: any) {
@@ -63,6 +69,11 @@ function CreateGamePage() {
         .reduce((a, b, i) => (a.id > b.id ? a : b)).id;
       const player = new Player(playerId + 1, playerName, 0);
       createNewPlayer(player);
+      createNewGame({
+        gameCategory: categories.find((c) => c.name === selectedCategory),
+        gameDifficulty: selectedDifficulty,
+        player,
+      }).then(() => props.history.push("/game/board"));
     } else {
       setErrors(["Missing player name"]);
     }

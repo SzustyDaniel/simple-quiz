@@ -6,7 +6,7 @@ import { Dispatcher } from "flux";
 
 const CHANGE_EVENT = "change";
 let _categories: Category[] = [];
-let _game: Game;
+let _game: Game | undefined = undefined;
 
 class GameStore extends EventEmitter {
   addChangeListener(callback: any) {
@@ -24,6 +24,10 @@ class GameStore extends EventEmitter {
   getCategories(): Category[] {
     return _categories;
   }
+
+  getGame() {
+    return _game;
+  }
 }
 
 const store = new GameStore();
@@ -36,6 +40,10 @@ dispatcher.register((action: any) => {
       break;
     case actionTypes.CREATE_GAME:
       _game = action.game;
+      store.emitChange();
+      break;
+    case actionTypes.END_GAME:
+      _game = undefined;
       store.emitChange();
       break;
     default:
