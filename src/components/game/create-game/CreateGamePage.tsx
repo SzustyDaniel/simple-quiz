@@ -105,7 +105,7 @@ function CreateGamePage(props: any) {
         selectedOption={selectedDifficulty}
         onOptionChange={handleDifficultyChange}
       />
-      <button className='submit-button' type='submit'>
+      <button className='app-button' type='submit'>
         Start game
       </button>
     </form>

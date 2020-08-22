@@ -77,3 +77,26 @@
     display: none;
   }
 }
+
+.app-button {
+  font-size: inherit;
+  font-weight: 300;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  background-color: $control-base-color;
+  color: $control-text-color;
+  outline: none;
+  transition: all 0.4s;
+  width: 25%;
+  height: max-content;
+
+  &:hover {
+    color: lighten($control-text-color, 55%);
+    background-color: darken($control-base-color, 55%);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1.1) translateY(0.8rem);
+  }
+}

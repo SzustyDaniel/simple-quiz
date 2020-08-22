@@ -3,6 +3,7 @@ import "./EndGamePage.scss";
 import { Game, Player } from "../../../models";
 import gameStore from "../../../stores/game.store";
 import { updatePlayer } from "../../../actions/playerActions";
+import { endCurrentGame } from "../../../actions/gameActions";
 
 const EndGamePage = (props: any) => {
   const [game, setGame] = useState<Game>();
@@ -22,6 +23,10 @@ const EndGamePage = (props: any) => {
       props.history.push("/game/create");
     }
   }, [game, player, props.history]);
+
+  const handleButtonPress = (url: string) => {
+    props.history.push(url);
+  };
 
   return (
     <div className='end-game__container'>
@@ -49,6 +54,21 @@ const EndGamePage = (props: any) => {
       </div>
       <div className='end-game__info'>
         <strong>Category:</strong> {game?.category?.name}
+      </div>
+      <div className='end-game__controls'>
+        <button className='app-button' onClick={() => handleButtonPress("/")}>
+          Go back to home page
+        </button>
+        <button
+          className='app-button'
+          onClick={() => handleButtonPress("/game/create")}>
+          Start a new quiz
+        </button>
+        <button
+          className='app-button'
+          onClick={() => handleButtonPress("/top")}>
+          Go to top scores
+        </button>
       </div>
     </div>
   );

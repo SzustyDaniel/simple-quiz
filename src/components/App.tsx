@@ -7,6 +7,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "./home/HomePage";
 import NotFoundPage from "./NotFoundPage";
 import EndGamePage from "./game/end-game/EndGamePage";
+import TopScoresPage from "./top-scores/TopScoresPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/game/board' component={GameBoardPage} />
         <Route path='/game/end' component={EndGamePage} />
         <Redirect from='/game' to='/game/create' />
+        <Route path='/top' component={TopScoresPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
