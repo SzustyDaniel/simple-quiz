@@ -13,6 +13,19 @@ export function createNewGame(values: CreateGameValues) {
   });
 }
 
+export function updateCurrentGame(game: Game) {
+  dispatcher.dispatch({
+    actionType: actionTypes.UPDATE_GAME,
+    game,
+  });
+}
+
+export function endCurrentGame() {
+  dispatcher.dispatch({
+    actionType: actionTypes.END_GAME,
+  });
+}
+
 export function getQuestionsCategories() {
   return questionService
     .getCategories()

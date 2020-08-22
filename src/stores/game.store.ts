@@ -42,6 +42,9 @@ dispatcher.register((action: any) => {
       _game = action.game;
       store.emitChange();
       break;
+    case actionTypes.UPDATE_GAME:
+      _game = action.game;
+      break;
     case actionTypes.END_GAME:
       _game = undefined;
       store.emitChange();

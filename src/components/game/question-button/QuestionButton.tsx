@@ -1,5 +1,6 @@
 import React from "react";
 import "./QuestionButton.scss";
+import * as he from "he";
 
 type QuestionButtonProps = {
   answer: string;
@@ -30,7 +31,7 @@ const QuestionButton = ({
 
   return (
     <button className={state} onClick={() => onClick(answer)}>
-      {answer}
+      {he.decode(answer)}
     </button>
   );
 };
