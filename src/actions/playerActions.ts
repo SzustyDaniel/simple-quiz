@@ -33,6 +33,15 @@ export function updatePlayer(player: Player) {
     );
 }
 
+export function deleteCurrentPlayer(player: Player) {
+  return playersInstance.delete(`${player.id}`).then((results) => {
+    dispatcher.dispatch({
+      actionType: actionTypes.DELETE_USER,
+      player,
+    });
+  });
+}
+
 export function getPlayers() {
   return playersInstance.get("").then((results) => {
     dispatcher.dispatch({

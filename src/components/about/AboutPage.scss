@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+
+.about {
+  &-container {
+    display: grid;
+    place-content: center;
+    grid-template-rows: max-content 1fr;
+    font-size: 2.5rem;
+    gap: 6.5rem;
+  }
+
+  &-title {
+    font-size: 5.5rem;
+  }
+
+  &-link {
+    font-weight: 700;
+    color: $primary-foreground-color;
+    translate: all 0.2s;
+
+    &:visited {
+      color: $primary-foreground-color;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.header {
+  &-container {
+    background-color: $secondary-background-color;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 5.5rem;
+  }
+
+  &-link-list {
+    list-style: none;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &-link-item {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &-link-active {
+    color: $link-active-color;
+    text-decoration: underline;
+  }
+}

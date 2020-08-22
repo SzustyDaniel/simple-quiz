@@ -3,7 +3,7 @@
 .App {
   display: grid;
   grid-template-rows: max-content 1fr;
-  height: 100vh;
+  min-height: 100vh;
   background-color: $primary-background-color;
   color: $primary-foreground-color;
 }

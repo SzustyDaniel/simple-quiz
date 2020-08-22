@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./EndGamePage.scss";
 import { Game, Player } from "../../../models";
 import gameStore from "../../../stores/game.store";
-import { updatePlayer } from "../../../actions/playerActions";
+import { updatePlayer, getPlayers } from "../../../actions/playerActions";
 import { endCurrentGame } from "../../../actions/gameActions";
 
 const EndGamePage = (props: any) => {

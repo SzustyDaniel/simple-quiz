@@ -37,13 +37,22 @@ dispatcher.register((action: any) => {
       store.emitChange();
       break;
     case actionTypes.UPDATE_USER:
-      const playerIndex = _players.findIndex((p) => p.id === action.player.id);
-      const updatedPlayers = _players.splice(playerIndex, 1, action.player);
-      _players = updatedPlayers;
+      let playerIndex = _players.findIndex((p) => p.id === action.player.id);
+      _players.splice(playerIndex, 1, action.player);
+      console.log(_players);
       store.emitChange();
       break;
     case actionTypes.LOAD_USERS:
       _players = action.players;
+      store.emitChange();
+      break;
+    case actionTypes.DELETE_USER:
+      console.log(_players);
+      let deletedPlayerIndex = _players.findIndex(
+        (p) => p.id === action.player.id
+      );
+      _players.splice(deletedPlayerIndex, 1);
+      console.log(_players);
       store.emitChange();
       break;
     default:

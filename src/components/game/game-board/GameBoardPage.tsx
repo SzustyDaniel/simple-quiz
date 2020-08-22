@@ -11,6 +11,10 @@ import {
   endCurrentGame,
   updateCurrentGame,
 } from "../../../actions/gameActions";
+import {
+  updatePlayer,
+  deleteCurrentPlayer,
+} from "../../../actions/playerActions";
 
 function ShuffleChoices(question: Question) {
   let shuffledQuestion = cloneDeep<Question>(question);
@@ -57,6 +61,9 @@ function GameBoardPage(props: any) {
 
   function handleEndGame(event: any) {
     props.history.push("/");
+    if (game) {
+      deleteCurrentPlayer(game.player);
+    }
     endCurrentGame();
   }
 
@@ -82,6 +89,7 @@ function GameBoardPage(props: any) {
             setSelectedAnswer("");
             setGame(clonedGame);
           } else {
+            updatePlayer(clonedGame.player);
             props.history.push("/game/end");
           }
         }, 1000);
