@@ -23,4 +23,5 @@ The app uses react router, react flux and axios.
 <ul>
   <li>Add quiz timer that depends on difficulty.</li>
   <li>Add backend API using Node.js</li>
+  <li>Create application icon</li>
 </ul>
