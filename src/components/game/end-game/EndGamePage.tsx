@@ -21,13 +21,35 @@ const EndGamePage = (props: any) => {
     } else {
       props.history.push("/game/create");
     }
-  }, [game, player]);
+  }, [game, player, props.history]);
 
   return (
-    <div>
-      <h2>Game ended</h2>
-      <div>{player?.score}</div>
-      <div>{player?.name}</div>
+    <div className='end-game__container'>
+      <h2 className='end-game__title'>Game ended</h2>
+      <div className='end-game__info'>
+        <strong>Name:</strong> {player?.name}
+      </div>
+      <div className='end-game__info'>
+        <strong>Score:</strong> {player?.score}{" "}
+        <span className='special-note'>
+          score is calculated by difficulty * number of correct answers *{" "}
+          {game?.BASE_ANSWER_SCORE}
+        </span>
+      </div>
+      <div className='end-game__info'>
+        <strong>Correct answers:</strong> {game?.totalCorrectAnswers} from{" "}
+        {game?.questions.length}
+      </div>
+      <div className='end-game__info'>
+        <strong>Wrong answers:</strong> {game?.wrongAnswersCount} from{" "}
+        {game?.questions.length}
+      </div>
+      <div className='end-game__info'>
+        <strong>Difficulty:</strong> {game?.difficulty}
+      </div>
+      <div className='end-game__info'>
+        <strong>Category:</strong> {game?.category?.name}
+      </div>
     </div>
   );
 };

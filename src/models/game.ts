@@ -5,6 +5,9 @@ import { Difficulty } from "./enums";
 
 export class Game {
   public readonly BASE_ANSWER_SCORE = 1000;
+  public readonly EASY_MULTIPLIER = 1;
+  public readonly MEDIUM_MULTIPLIER = 1.5;
+  public readonly HARD_MULTIPLIER = 3;
 
   constructor(
     private _id: number,
@@ -84,13 +87,13 @@ export class Game {
 
     switch (this.difficulty) {
       case Difficulty.Easy:
-        answersMultiplier = 1;
+        answersMultiplier = this.EASY_MULTIPLIER;
         break;
       case Difficulty.Medium:
-        answersMultiplier = 1.5;
+        answersMultiplier = this.MEDIUM_MULTIPLIER;
         break;
       case Difficulty.Hard:
-        answersMultiplier = 3;
+        answersMultiplier = this.HARD_MULTIPLIER;
         break;
     }
 
