@@ -7,10 +7,18 @@ const HomePage = (props: any) => {
   };
 
   return (
-    <div>
-      <h1>Simple Quiz page</h1>
-      <button onClick={() => nextPath("/game/create")}>Start new game</button>
-    </div>
+    <section className='home-container'>
+      <h1 className='home-title'>Simple Quiz</h1>
+      <button className='app-button' onClick={() => nextPath("/game/create")}>
+        Start a new game
+      </button>
+      <button className='app-button' onClick={() => nextPath("/top")}>
+        Go to top scores
+      </button>
+      <button className='app-button' onClick={() => nextPath("/about")}>
+        About the app
+      </button>
+    </section>
   );
 };
 
