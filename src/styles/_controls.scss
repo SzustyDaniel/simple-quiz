@@ -1,15 +1,18 @@
+@import "./variables";
+
 // text input combination controls for type div -> label input
 .input {
   &-container {
     display: grid;
     grid-template-columns: 20rem minmax(20rem, 50rem);
     column-gap: 5rem;
+    grid-template-rows: max-content;
 
     .error-text {
       grid-column: 2 / -1;
-      color: red;
+      color: $incorrect-color;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   }
 
@@ -19,12 +22,14 @@
 
   &-control {
     font-size: inherit;
-    background-color: #ccc; // TODO change to variable
+    background-color: $control-base-color;
+    color: $control-text-color;
     border-radius: 0.5rem;
+    height: max-content;
   }
 
   &-error {
-    border: solid 0.2rem red !important; // TODO change to variable
+    border: solid 0.2rem $incorrect-color !important; // TODO change to variable
   }
 }
 
@@ -42,5 +47,6 @@
   &-control {
     font-size: inherit;
     cursor: pointer;
+    height: max-content;
   }
 }

@@ -85,7 +85,7 @@ function CreateGamePage(props: any) {
 
   return (
     <form className='create-game-form' onSubmit={handleFormSubmit}>
-      <h3>Create New Game</h3>
+      <h3 className='create-game-title'>Create New Game</h3>
       <TextInput
         label='Enter your name'
         value={playerName}

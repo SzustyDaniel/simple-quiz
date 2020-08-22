@@ -32,8 +32,8 @@ const EndGamePage = (props: any) => {
       <div className='end-game__info'>
         <strong>Score:</strong> {player?.score}{" "}
         <span className='special-note'>
-          score is calculated by difficulty * number of correct answers *{" "}
-          {game?.BASE_ANSWER_SCORE}
+          (score is calculated by difficulty * number of correct answers *{" "}
+          {game?.BASE_ANSWER_SCORE})
         </span>
       </div>
       <div className='end-game__info'>

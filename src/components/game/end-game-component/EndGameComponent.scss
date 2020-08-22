@@ -1,15 +1,17 @@
+@import "../../../styles/variables";
+
 .end-game-component {
-  color: red;
+  color: darken($incorrect-color, 20%);
   transition: all 0.4s;
   margin-left: 1.5rem;
   cursor: pointer;
 
   &:hover {
-    color: darken(red, 20%);
+    color: darken($incorrect-color, 50%);
   }
 
   &:active {
-    color: lighten(red, 20%);
+    color: lighten($incorrect-color, 20%);
     transform: scale(0.9);
   }
 }

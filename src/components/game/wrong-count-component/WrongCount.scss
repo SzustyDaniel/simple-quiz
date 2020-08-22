@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .wrong-count {
   &-container {
     display: grid;
@@ -6,6 +8,6 @@
   }
 
   &-item {
-    color: red;
+    color: $incorrect-color;
   }
 }

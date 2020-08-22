@@ -1,15 +1,16 @@
+@import "../../../styles/variables";
+
 .game-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr) max-content;
   grid-template-rows: 1fr max-content 1fr;
   padding: 2rem 3.5rem;
-  background-color: #dcd;
 }
 
 .wrong-count-section {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  background-color: #ece;
+  background-color: $secondary-background-color;
   width: 30%;
 }
 
@@ -21,7 +22,7 @@
 
 .current-question-section {
   grid-column: 1 / 3;
-  background-color: #eee;
+  background-color: $secondary-background-color;
 }
 
 .answers-section {
@@ -34,5 +35,4 @@
   padding: 1.5rem;
   gap: 2rem;
   width: 50%;
-  background-color: #ccc;
 }

@@ -3,22 +3,30 @@
 .create-game-form {
   display: grid;
   padding: 1rem 5rem;
-  grid-template-rows: repeat(auto-fit, max-content);
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  grid-auto-rows: max-content;
+  gap: 5rem;
 }
+
+.create-game-title {
+  font-size: 5.5rem;
+}
+
 .submit-button {
   font-size: inherit;
   font-weight: 300;
   padding: 1rem;
   border-radius: 0.7rem;
-  background-color: #ccc; // TODO change to variable
+  background-color: $control-base-color;
+  color: $control-text-color;
   outline: none;
   transition: all 0.4s;
   width: 25%;
+  height: max-content;
 
   &:hover {
-    background-color: red;
+    color: lighten($control-text-color, 55%);
+    background-color: darken($control-base-color, 55%);
     transform: scale(1.1);
   }
 

@@ -1,3 +1,5 @@
+@import "./variables";
+
 .radio {
   // for what holds the label and the radio controls
   &__container-main {
@@ -24,12 +26,12 @@
 
   // custom radio input look on hover
   &__container:hover input ~ .app-radio {
-    background-color: #ccc; // TODO change to variable
+    background-color: $control-select-color;
   }
 
   // custom radio input look on checked
   &__container input:checked ~ .app-radio {
-    background-color: #2196f3; // TODO change to variable
+    background-color: $control-select-color;
   }
 
   &__container input:checked ~ .app-radio:after {
@@ -43,7 +45,7 @@
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background: white; // TODO change to variable
+    background: $control-base-color;
   }
 
   // radio buttons controls
@@ -64,7 +66,7 @@
 .app-radio {
   height: 2rem;
   width: 2rem;
-  background-color: #eee; // TODO change to variable
+  background-color: $control-base-color;
   border-radius: 50%;
   margin-right: 1.5rem;
   transition: all 0.4s;
