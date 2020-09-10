@@ -1,4 +1,5 @@
 @import "../../styles/buttons";
+@import "../../styles/mixins";
 
 .home {
   &-container {
@@ -9,6 +10,21 @@
     justify-items: center;
     text-align: center;
     grid-template-columns: 1fr;
+
+    @include respond(tab-land) {
+      .app-button {
+        width: 75%;
+      }
+    }
+
+    @include respond(tab-port) {
+      padding: 2.5rem;
+      place-content: start;
+
+      .app-button {
+        width: 100%;
+      }
+    }
   }
 
   &-title {

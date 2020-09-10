@@ -1,19 +1,36 @@
 @import "../../../styles/buttons";
+@import "../../../styles/mixins";
 
 .end-game {
   &__title {
     font-size: 5.5rem;
     text-align: center;
+
+    @include respond(tab-land) {
+      font-size: 3.5rem;
+    }
   }
 
   &__container {
     display: grid;
     gap: 2rem;
     place-content: center;
+
+    @include respond(tab-port) {
+      place-content: start;
+    }
   }
 
   &__info {
     font-size: 3.5rem;
+
+    @include respond(tab-land) {
+      font-size: 2.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
   }
 
   &__controls {
@@ -24,9 +41,18 @@
     .app-button {
       width: 100%;
     }
+
+    @include respond(phone) {
+      gap: 1.5rem;
+      font-size: 1.5rem;
+    }
   }
 }
 
 .special-note {
   font-size: 1.5rem;
+
+  @include respond(phone) {
+    font-size: 1.2rem;
+  }
 }
