@@ -1,5 +1,7 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
+// TODO add responsive break points to the header
 .header {
   &-container {
     background-color: $secondary-background-color;

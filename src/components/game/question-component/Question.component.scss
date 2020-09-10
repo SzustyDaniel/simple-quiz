@@ -1,6 +1,21 @@
+@import "../../../styles/mixins";
+
 .question-text {
   font-size: 5.5rem;
   text-align: center;
   font-weight: 700;
   padding: 2.5rem;
+
+  @include respond(tab-land) {
+    font-size: 3.5rem;
+    padding: 1.5rem;
+  }
+
+  @include respond(tab-port) {
+    font-size: 2.5rem;
+  }
+
+  @include respond(phone) {
+    font-size: 1.5rem;
+  }
 }
